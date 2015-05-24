@@ -1,0 +1,6 @@
+*.npy
+*.svg
+*.pyc
+Article-Figures/Simu-Tandonnet
+*.out
+Article-Simulation/Simulation-Tandonnet
