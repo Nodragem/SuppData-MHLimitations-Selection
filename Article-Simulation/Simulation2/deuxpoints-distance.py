@@ -16,9 +16,9 @@ import matplotlib.pyplot as plt
 
 
 
-start = time.time() 
-sim_time = 0.200   #duree de la simulation
-width = 100   
+start = time.time()
+sim_time = 0.200  #duree de la simulation
+width = 100
 elec_pos = (20, 23) ## electrode sur la barre
 elec_pos2 = (30, 30) ## electrode sur la cible
 distractor_potential = (1333*mV, 2000*mV, 3500*mV, 4000*mV)
@@ -80,11 +80,11 @@ CLi = Connection(SC, SC, 'gi', clock = sim_clock)
 CLe.W = SparseConstructionMatrix(We*map_excit)
 CLi.W = SparseConstructionMatrix(-Wi*map_inhib)
 
-print "poids du neurone 10 sur le neurone 10: inhib: ", str(CLi.W[10,10]), "excit: ", str(CLe.W[10,10]) 
+print "poids du neurone 10 sur le neurone 10: inhib: ", str(CLi.W[10,10]), "excit: ", str(CLe.W[10,10])
 
 conn_time = time.time()-start
 a = time.gmtime(conn_time)
-print time.strftime("\ntask time for connection calculation: %H:%M:%S",a )        
+print time.strftime("\ntask time for connection calculation: %H:%M:%S",a )
 
 print "Preparation structures and images..."
 G1 = NeuronGroup(1, model = eqs_elec, threshold = 1., reset = 0, clock = sim_clock) ## N entree stim pour distract
